@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/INTERNSHIP/Internship-project/mlruns/0/30846695265f4c959a52804194d38a62/artifacts
+end_time: 1692094269212
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 30846695265f4c959a52804194d38a62
+run_name: bustling-flea-662
+run_uuid: 30846695265f4c959a52804194d38a62
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692094269106
+status: 3
+tags: []
+user_id: breva

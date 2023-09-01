@@ -32,9 +32,8 @@ class DataTransformation:
         try:
             logging.info('Data Transformation initiated')
 
-            # Numerical Features
 
-
+            # Categorigal Features
 
             workclass_categories = [' Never-worked', ' Without-pay',' Self-emp-inc',' Self-emp-not-inc',' Local-gov',' State-gov',' Federal-gov',' Private']
                         
@@ -44,22 +43,26 @@ class DataTransformation:
 
 
 
-            # Categorigal Pipeline
             categorical_cols_for_OrdinalEncoding = ['workclass', 'education']
 
 
             categorical_cols_for_OnehotEncoding = ['marital_status', 'relationship', 'sex', 'occupation']
 
 
-
+            # Numerical Features
 
             Numerical_cols  = ['age','education_num','capital_gain', 'capital_loss', 'hours_per_week']
+
+
+            # Numerical Pipeline
 
             Numerical_pipeline_for_missingvalues = Pipeline(
                             steps=[
                             ('imputer',SimpleImputer(strategy='median')),
                             ('scaler',StandardScaler())
                             ])
+            
+            # Categorical pipeline
                         
             categorical_pipeline_for_OrdinalEncoding = Pipeline(
                             steps=[

@@ -66,7 +66,7 @@ class ModelTrainer:
                 "Decision Tree": {
                     'criterion':["gini", "entropy"],
                     'max_depth': [2, 3, 5, 10, 20],
-                    #'min_samples_leaf': [5, 10, 20, 50, 100,150]
+                    ##'min_samples_leaf': [5, 10, 20, 50, 100,150]
                 },
                 "Random Forest":{
 

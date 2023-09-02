@@ -71,7 +71,7 @@ class ModelTrainer:
                 "Random Forest":{
 
                     'n_estimators': [int(x) for x in np.linspace(start=40, stop=150, num=15)],
-                    'max_depth': [2, 3, 5, 10, 20],
+                    'max_depth': [int(x) for x in np.linspace(40, 150, num=15)]
                     #'criterion':["gini", "entropy"],
                     #'min_samples_leaf': [5, 10, 20, 50, 100,150],
                     #'min_samples_split' : [2, 5, 10,14]

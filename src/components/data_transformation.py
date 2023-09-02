@@ -46,7 +46,7 @@ class DataTransformation:
             categorical_cols_for_OrdinalEncoding = ['workclass', 'education']
 
 
-            categorical_cols_for_OnehotEncoding = ['marital_status', 'relationship', 'sex', 'occupation']
+            categorical_cols_for_OnehotEncoding = ['marital_status', 'relationship', 'sex', 'occupation', 'race', 'country']
 
 
             # Numerical Features
@@ -127,7 +127,7 @@ class DataTransformation:
             logging.info(f'Test Dataframe head: \n{test_df.head().to_string()}')
 
             target_column_name = 'salary'
-            drop_columns = [target_column_name,'fnlwgt','race','country']
+            drop_columns = [target_column_name,'fnlwgt']
 
             input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
             target_feature_train_df = train_df[target_column_name]

@@ -6,7 +6,7 @@ import pandas as pd
 import dill
 import pickle
 from sklearn.metrics import accuracy_score
-from sklearn.model_selection import RandomizedSearchCV,GridSearchCV
+from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import StratifiedKFold
 import mlflow
 import mlflow.sklearn
@@ -41,13 +41,13 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
             skfold=StratifiedKFold(n_splits=5)
             
 
-            Grid_Search = GridSearchCV(estimator= model, param_grid=para, cv=skfold,n_jobs=1, verbose=1, scoring = "accuracy")
-            Grid_Search.fit(X_train, y_train)
+            Randomized_Search = RandomizedSearchCV(estimator= model, param_distributions=para, cv=skfold,random_state=30)
+            Randomized_Search.fit(X_train, y_train)
 
-            logging.info(f'Best parameters are: {Grid_Search.best_params_}')
+            logging.info(f'Best parameters are: {Randomized_Search.best_params_}')
 
 
-            model.set_params(**Grid_Search.best_params_)
+            model.set_params(**Randomized_Search.best_params_,random_state=30)
             model.fit(X_train,y_train)
 
 

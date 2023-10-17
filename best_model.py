@@ -1,4 +1,4 @@
-import pandas as pd
+"""import pandas as pd
 import numpy as np
 import os
 
@@ -82,4 +82,4 @@ if __name__ == '__main__':
     try:
         main(n_estimators=parse_args.n_estimators,max_depth=parse_args.max_depth)
     except Exception as e:
-        raise e
+        raise e"""
